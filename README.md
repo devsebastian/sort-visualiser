@@ -1,6 +1,8 @@
 # Sort Visualiser (sort-visualiser)
 A great and simple sort visualising app created purely in HTML, CSS and JavaScript. [Still in Beta Stage]
 
+https://sort-visualiser.herokuapp.com/
+
 A simple sort visualising app to visualise each kind of sort in a beautiful and intuitive manner. 
 ## Properties
 1. Edit speed of sort.
