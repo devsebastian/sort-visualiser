@@ -1,1 +1,4 @@
-{}
+{
+    "name": "sort-visualiser",
+    "description": "a simple and intuitive sort visualising program created using pure HTML, CSS, JavaScript"
+}

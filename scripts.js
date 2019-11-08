@@ -1,11 +1,11 @@
 var arr = [];
 var play = false;
 
-var delay = 1;
+var delay = 40;
 var iter = [0]
 var multiplier = 1;
 
-updateDelay(1);
+updateDelay(document.getElementById("delay-slider").value);
 updateSize(document.getElementById("number-slider").value);
 updateSizeValue(document.getElementById("number-slider").value);
 
@@ -24,7 +24,7 @@ function updateSize(val) {
         arr.push(i + 1);
     }
     max = Math.max(...arr);
-    shuffleArray();
+    arr = shuffle();
     printChartOnly();
 }
 
@@ -32,40 +32,26 @@ function updateSizeValue(val) {
     document.getElementById('number-value').innerHTML = "Size: " + val;
 }
 
-// function updateRange(val) {
-//     val = "arr" + val;
-//     arr = [...window[val]];
-//     max = Math.max(...arr);
-//     iter[0] = 0;
-//     printChartOnly();
-//     stack = [];
-// }
-
-function shuffleArray() {
-    iter[0] = 0;
-    arr = shuffle(arr);
+function shuffleArray(){
+    arr = shuffle();
     printChartOnly();
-    stack = [];
 }
 
-function shuffle(array) {
-    var m = array.length,
-        t, i;
+function shuffle() {
+    var m = arr.length, t, i;
     while (m) {
         i = Math.floor(Math.random() * m--);
-        t = array[m];
-        array[m] = array[i];
-        array[i] = t;
+        t = arr[m];
+        arr[m] = arr[i];
+        arr[i] = t;
     }
-    return array;
+    return arr;
 }
 
 function togglePlay() {
     play = !play;
     document.getElementById("sort-btn").innerHTML = play ? "Pause" : "Sort";
 }
-
-
 
 function sort() {
     togglePlay();
@@ -86,42 +72,26 @@ function sort() {
             case 3:
                 document.getElementById("sort-btn").innerHTML = "DISABLED";
                 document.getElementById("sort-btn").toggleAttribute("disabled");
-                mergeSortSleep(0, arr.length - 1);
-                // mergeSort(0, arr.length - 1);
-                // playstack(0);
+                mergeSort(0, arr.length - 1);
                 break;
         }
-    } else {
-
-    }
-}
-
-function playstack(i) {
-    if (i >= stack.length) {
-        finishSort();
-        return;
-    }
-    setTimeout(() => {
-        printChartArr(stack[i], i, i);
-        playstack(++i);
-    }, delay);
-}
-
-function printStack(arr, a) {
-    var bars = document.getElementsByClassName("bar");
-    for (var i = 0; i < bars.length; i++) {
-        bars[i].setAttribute("style", "height: " + (arr[i] / max * 100) + "%;");
-    }
+    } 
 }
 
 function finishSort() {
     console.log("finished");
     printChartOnly();
     iter[0] = 0;
-    // document.getElementById("sort-btn").classList.toggle("disabled");
     document.getElementById("sort-btn").innerHTML = "SORT";
     document.getElementById("sort-btn").removeAttribute("disabled");
     togglePlay();
+}
+
+
+function swap(i1, i2) {
+    temp = arr[i1];
+    arr[i1] = arr[i2];
+    arr[i2] = temp;
 }
 
 function selectionSort(iter) {
@@ -184,13 +154,6 @@ function insertionSort(iter) {
     }
 }
 
-function swap(i1, i2) {
-    temp = arr[i1];
-    arr[i1] = arr[i2];
-    arr[i2] = temp;
-}
-
-
 function printChartOnly() {
     document.getElementsByClassName("table")[0].innerHTML = "";
     var i;
@@ -200,10 +163,18 @@ function printChartOnly() {
 }
 
 function printChart(curr, swap) {
-    document.getElementsByClassName("table")[0].innerHTML = "";
     var i;
     for (i = 0; i < arr.length; i++) {
-        document.body.getElementsByClassName("table")[0].innerHTML += ("<div class='chart'><div class=" + (i == curr ? "'current-bar'" : i == swap ? "'swap-bar'" : "'bar'") + " style='height: " + arr[i] / max * 100 + "%;'></div></div>");
+        document.getElementsByClassName("bar")[i].setAttribute("style", "height: " + (arr[i] / max * 100) + "%;");
+        if (i == curr) {
+            document.getElementsByClassName("bar")[i].classList.toggle("curr");
+        } else if (i == swap) {
+            document.getElementsByClassName("bar")[i].classList.toggle("swap");
+        } else {
+            document.getElementsByClassName("bar")[i].classList.remove("swap");
+            document.getElementsByClassName("bar")[i].classList.remove("curr");
+        }
+        
     }
 }
 
@@ -211,52 +182,13 @@ function print(num, max) {
     document.body.getElementsByClassName("table")[0].innerHTML += ("<div class='chart'><div class='bar' style='height: " + num / max * 100 + "%;'></div></div>");
 }
 
-
-
-function merge(l, m, r) {
+async function merge(l, m, r) {
     var L = [],
         R = [],
         i, j, k;
-    for (i = l, j = 0; i <= m; i++)
+    for (i = l; i <= m; i++)
         L.push(arr[i]);
-    for (i = m + 1, k = 0; i <= r; i++)
-        R.push(arr[i]);
-
-    for (i = l, j = 0, k = 0; i <= r && j <= m - l && k <= r - m - 1; i++) {
-        if (L[j] < R[k])
-            arr[i] = L[j++];
-        else
-            arr[i] = R[k++];
-    }
-    while (j <= m - l) {
-        arr[i++] = L[j++];
-    }
-    while (k <= r - m - 1) {
-        arr[i++] = R[k++];
-    }
-
-}
-
-
-function mergeSort(l, r) {
-    if (l < r) {
-        var m = parseInt((l + r) / 2);
-        mergeSort(l, m);
-        mergeSort(m + 1, r);
-        stack.push([...arr]);
-
-        merge(l, m, r);
-    }
-}
-
-
-async function mergeSleep(l, m, r) {
-    var L = [],
-        R = [],
-        i, j, k;
-    for (i = l, j = 0; i <= m; i++)
-        L.push(arr[i]);
-    for (i = m + 1, k = 0; i <= r; i++)
+    for (i = m + 1; i <= r; i++)
         R.push(arr[i]);
 
     for (i = l, j = 0, k = 0; i <= r && j <= m - l && k <= r - m - 1; i++) {
@@ -273,42 +205,23 @@ async function mergeSleep(l, m, r) {
     }
     await sleep(delay / 4);
     printChart(r, l);
-
     if (l == 0 && r == arr.length - 1) {
         finishSort();
     }
 }
 
 
-async function mergeSortSleep(l, r) {
+async function mergeSort(l, r) {
 
     if (l < r) {
         var m = parseInt((l + r) / 2);
         printChart(r, l);
-        await mergeSortSleep(l, m);
+        await mergeSort(l, m);
         printChart(r, l);
-        await mergeSortSleep(m + 1, r);
+        await mergeSort(m + 1, r);
         printChart(r, l);
-        await mergeSleep(l, m, r);
+        await merge(l, m, r);
         await sleep(delay / 4);
-    }
-}
-
-
-function printChartOnlyArr(arr) {
-    if (arr == undefined) return;
-    document.getElementsByClassName("table")[0].innerHTML = "";
-    var i;
-    for (i = 0; i < arr.length; i++) {
-        print(arr[i], max);
-    }
-}
-
-function printChartArr(arr, curr, swap) {
-    document.getElementsByClassName("table")[0].innerHTML = "";
-    var i;
-    for (i = 0; i < arr.length; i++) {
-        document.body.getElementsByClassName("table")[0].innerHTML += ("<div class='chart'><div class=" + (i == curr ? "'current-bar'" : i == swap ? "'swap-bar'" : "'bar'") + " style='height: " + arr[i] / max * 100 + "%;'></div></div>");
     }
 }
 
