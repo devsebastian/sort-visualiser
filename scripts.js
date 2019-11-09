@@ -2,7 +2,7 @@ var arr = [];
 var play = false;
 
 var delay = 40;
-var iter = [0, 0, 0]
+var iter = [0]
 var multiplier = 1;
 
 updateDelay(document.getElementById("delay-slider").value);
@@ -47,13 +47,13 @@ async function sort() {
 }
 
 function enableSort() {
-    document.getElementById("sort-btn").innerHTML = "DISABLED";
-    document.getElementById("sort-btn").toggleAttribute("disabled");
+    document.getElementById("sort-btn").innerHTML = "SORT";
+    document.getElementById("sort-btn").removeAttribute("disabled");
 }
 
 function disableSort() {
     document.getElementById("sort-btn").innerHTML = "DISABLED";
-    document.getElementById("sort-btn").toggleAttribute("disabled");
+    document.getElementById("sort-btn").setAttribute("disabled", null);
 }
 
 
@@ -105,6 +105,7 @@ function updateSizeValue(val) {
 }
 
 function shuffleArray() {
+    finishSort();
     arr = shuffle();
     printChartOnly();
 }
@@ -131,7 +132,7 @@ function finishSort() {
     printChartOnly();
     iter[0] = 0;
     enableSort();
-    togglePlay();
+    play = false;
 }
 
 
