@@ -38,19 +38,19 @@ body {
 }
 
 .bar:hover {
-  background: rgb(7, 206, 7);
-}
-
-.swap {
-  background: white;
+  background: linear-gradient(rgb(0, 255, 0), rgb(94, 255, 0));
 }
 
 .curr {
-  background: linear-gradient(rgb(255, 0, 0), rgb(218, 5, 5));
+  background: white;
+}
+
+.unsorted {
+  background: linear-gradient(rgb(117, 8, 8), rgb(218, 5, 5));
 }
 
 .table {
-  background: rgb(26, 28, 43);
+  background: rgb(16, 17, 27);
   flex-grow: 1;
   width: 100%;
   white-space: nowrap;
@@ -59,12 +59,17 @@ body {
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
   background-size: 50px 50px;
-  /* background-image: linear-gradient(to right, rgb(8, 8, 17) 1px, transparent 1px), linear-gradient(to bottom, rgb(8, 8, 17) 1px, transparent 1px); */
   background-image: linear-gradient(
+      to right,
+      rgb(5, 5, 10) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(5, 5, 10) 1px, transparent 1px);
+  /* background-image: linear-gradient(
     to bottom,
     rgb(12, 12, 26) 1px,
     transparent 2px
-  );
+  ); */
 }
 
 .expand {
@@ -88,7 +93,7 @@ body {
 
 .header-container {
   padding: 1% 1%;
-  background: rgb(36, 38, 58);
+  background: rgb(29, 31, 48);
   color: white;
 }
 
@@ -106,16 +111,16 @@ button {
   padding: 8px 12px;
   border-radius: 4px;
   border: 0;
-  background: darkorange;
+  background: rgb(236, 111, 8);
   color: white;
   margin: 2px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 button:hover {
-  background: darkviolet;
+  background: darkorange;
 }
 
 #delay-slider {
@@ -129,7 +134,7 @@ option {
 }
 
 option:checked {
-  background: rgb(93, 96, 146);
+  background: rgb(42, 43, 63);
   color: white;
 }
 
@@ -181,7 +186,7 @@ select {
   background: grey;
 }
 
-.watermark{
+.watermark {
   position: absolute;
   bottom: 3%;
   left: 1%;
@@ -191,21 +196,21 @@ select {
   cursor: pointer;
 }
 
-.watermark:hover{
+.watermark:hover {
   opacity: 1;
 }
 
-a:visited{
+a:visited {
   text-decoration: none;
   color: white;
 }
 
-a{
+a {
   text-decoration: none;
   color: white;
 }
 
-a:active{
+a:active {
   color: white;
   text-decoration: none;
 }
