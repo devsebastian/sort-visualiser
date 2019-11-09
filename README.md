@@ -4,7 +4,9 @@ A great and simple sort visualising app created purely in HTML, CSS and JavaScri
 https://sort-visualiser.herokuapp.com/
 
 A simple sort visualising app to visualise each kind of sort in a beautiful and intuitive manner. 
+
 ![Sorting Animation](/images/play.gif)
+
 ## Properties
 1. Edit speed of sort.
 1. Change the size of array (number of elements).
