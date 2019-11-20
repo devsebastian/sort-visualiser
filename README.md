@@ -4,6 +4,9 @@ A great and simple sort visualising app created purely in HTML, CSS and JavaScri
 https://sort-visualiser.herokuapp.com/
 
 A simple sort visualising app to visualise each kind of sort in a beautiful and intuitive manner. 
+
+![Sorting Animation](/images/play.gif)
+
 ## Properties
 1. Edit speed of sort.
 1. Change the size of array (number of elements).
@@ -12,7 +15,7 @@ A simple sort visualising app to visualise each kind of sort in a beautiful and 
 1. play/pause the sort at any instant of time.
 
 ## Screenshots
-![Main Page](/images/main_page.png)
+![Sorting](/images/sorting.png)
 
 Animated visuals to easilly understand each kind of sort. you can play or pause the sort at any instant of time. 
 
@@ -21,12 +24,12 @@ Animated visuals to easilly understand each kind of sort. you can play or pause 
 1. Bubble Sort
 1. Insertion Sort
 1. Merge Sort
-
-![Main Page](/images/selection_sort.png)
-
-## Goals
 1. Quick Sort
 1. Heap Sort
+
+![Sorted](/images/sorted.png)
+
+## Goals
 1. Radix Sort
 1. Shell Sort
 1. Pigeonhole Sort
