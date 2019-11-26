@@ -27,7 +27,7 @@ Animated visuals to easilly understand each kind of sort. you can play or pause 
 1. Quick Sort
 1. Heap Sort
 
-![Sorted](/images/sorted.png)
+![Sorted](/images/sorted1.png)
 
 ## Goals
 1. Radix Sort
