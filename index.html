@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SORT VISUALISER</title>
@@ -12,20 +13,20 @@
 <body class="expand">
     <div class="header-container">
         <div class="header">
-            <span style="align-self: center;">SORT VISUALISER</span>
-
-            <div class="section"></div>
+            <div class="section" style="align-self: center;">
+                <span >SORT VISUALISER</span>
+            </div>
             <div class="section">
-                <input class="slider" id="delay-slider" oninput="updateDelay(this.value)" name="delay-slider" type="range" min="0" max="800" value="40" step="10"><br>
+                <input class="slider" id="delay-slider" oninput="updateDelay(this.value)" name="delay-slider"
+                    type="range" min="0" max="800" value="40" step="10"><br>
                 <label name="delay-slider" id="delayValue">Delay</label>
             </div>
             <div class="section">
-                <input class="slider" id="number-slider" onchange="updateSize(this.value)" oninput="updateSizeValue(this.value)" name="delay-slider" type="range" min="60" max="400" step="20" value="100"><br>
+                <input class="slider" id="number-slider" onchange="updateSize(this.value)"
+                    oninput="updateSizeValue(this.value)" name="delay-slider" type="range" min="60" max="400" step="20"
+                    value="100"><br>
                 <label name="number-slider" id="number-value">Number of Elements</label>
             </div>
-
-            <div class="section"></div>
-            <div class="section"></div>
             <div class="section">
                 <select>
                     <option value="1">Selection Sort</option>
@@ -35,17 +36,16 @@
                     <option value="4">Quick Sort</option>
                     <option value="4">Heap Sort</option>
                 </select></div>
-            <div class="section"></div>
-            <div class="section"></div>
-
             <div class="section">
                 <button name="sort" onclick="sort()" id="sort-btn">SORT</button>
+            </div>
+            <div class="section">
                 <button onclick="shuffleArray()">SHUFFLE</button></div>
-            <!-- <div class="section">
-                <button id="play-pause-btn" onclick="togglePlay()">Pause</button></div> -->
         </div>
     </div>
     <div class="table expand"></div>
     <div class="watermark"><a href="https://github.com/devsebastian">Made with ❤️ by <b>Dev Sebastian</b></a></div>
 </body>
 <script src="scripts.js"></script>
+
+</html>

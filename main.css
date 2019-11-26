@@ -6,10 +6,10 @@
   font-family: "Open Sans", sans-serif;
 }
 
-html,
-body {
+html, body {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -59,12 +59,7 @@ body {
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
   background-size: 50px 50px;
-  background-image: linear-gradient(
-      to right,
-      rgb(5, 5, 10) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to bottom, rgb(5, 5, 10) 1px, transparent 1px);
+  background-image: linear-gradient( to right, rgb(5, 5, 10) 1px, transparent 1px), linear-gradient(to bottom, rgb(5, 5, 10) 1px, transparent 1px);
   /* background-image: linear-gradient(
     to bottom,
     rgb(12, 12, 26) 1px,
@@ -103,6 +98,8 @@ body {
 
 .section {
   flex-grow: 1;
+  padding: 0px 4px;
+  position: relative;
   display: inline-block;
   text-align: center;
 }
@@ -121,11 +118,6 @@ button {
 
 button:hover {
   background: darkorange;
-}
-
-#delay-slider {
-  width: 200px;
-  margin: 0px 10px;
 }
 
 option {
@@ -178,7 +170,7 @@ select {
   width: 25px;
   border-radius: 12px;
   height: 25px;
-  background: #4caf50;
+  background: darkorange;
   cursor: pointer;
 }
 
@@ -213,4 +205,15 @@ a {
 a:active {
   color: white;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    display: block;
+  }
+  .section {
+    position: relative;
+    width: 47%;
+    padding: 12px 4px;
+  }
 }

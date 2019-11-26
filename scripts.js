@@ -97,7 +97,7 @@ function updateSize(val) {
     }
     max = Math.max(...arr);
     arr = shuffle();
-    printChartOnly();
+    finishSort();
 }
 
 function updateSizeValue(val) {
@@ -128,7 +128,6 @@ function togglePlay() {
 
 
 function finishSort() {
-    console.log("finished");
     printChartOnly();
     iter[0] = 0;
     enableSort();
