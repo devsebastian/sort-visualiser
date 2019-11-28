@@ -1,5 +1,3 @@
-
-
 # Sort Visualiser (sort-visualiser)
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/devsebastian/sort-visualiser/issues) 
@@ -11,8 +9,6 @@ A great and simple sort visualising app created purely in HTML, CSS and JavaScri
 **App Link:** https://sort-visualiser.herokuapp.com/
 
 A simple sort visualising app to visualise each kind of sort in a beautiful and intuitive manner. 
-
-![Sorting Animation](/images/play.gif)
 
 ## Properties
 1. Edit speed of sort.
