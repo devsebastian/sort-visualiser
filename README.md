@@ -1,7 +1,6 @@
 
 
 # Sort Visualiser (sort-visualiser)
-<sub>Built with ❤︎ by <a href="https://github.com/liyasthomas">Dev Sebastian</a></sub>
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/devsebastian/sort-visualiser/issues) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/devsebastian/sort-visualiser/blob/master/LICENSE) 
@@ -43,3 +42,6 @@ Animated visuals to easilly understand each kind of sort. you can play or pause 
 1. Pigeonhole Sort
 1. Cocktail Sort
 1. and all the other sorting algorithms...
+
+---
+<sub>Built with ❤︎ by <a href="https://github.com/devsebastian">Dev Sebastian</a></sub>
