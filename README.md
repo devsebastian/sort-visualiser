@@ -1,17 +1,11 @@
-<div align="center">
-  <br>
-  <h1>Dev Sebastian</h1>
-  <sub>Built with ❤︎ by
-  <a href="https://github.com/liyasthomas">Dev Sebastian</a>
-	</sub>
-</div>
 
----
+
+# Sort Visualiser (sort-visualiser)
+<sub>Built with ❤︎ by <a href="https://github.com/liyasthomas">Dev Sebastian</a></sub>
+
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/devsebastian/sort-visualiser/issues) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/devsebastian/sort-visualiser/blob/master/LICENSE) 
 [![twitter](https://img.shields.io/badge/twitter-@iDevSebastian-green.svg)](https://twitter.com/iDevSebastian)
-
-# Sort Visualiser (sort-visualiser)
 
 A great and simple sort visualising app created purely in HTML, CSS and JavaScript by [**Dev Sebastian**](https://github.com/devsebastian)
   
