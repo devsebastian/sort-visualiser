@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/devsebastian/sort-visualiser/blob/master/LICENSE) 
 [![twitter](https://img.shields.io/badge/twitter-@iDevSebastian-green.svg)](https://twitter.com/iDevSebastian)
 
-A great and simple sort visualising app created purely in HTML, CSS and JavaScript by [**Dev Sebastian**](https://github.com/devsebastian)
+A super simple and super cool sort visualizing app created purely in HTML, CSS and JavaScript by [**Dev Sebastian**](https://github.com/devsebastian)
   
 **App Link:** https://sort-visualiser.herokuapp.com/
 
